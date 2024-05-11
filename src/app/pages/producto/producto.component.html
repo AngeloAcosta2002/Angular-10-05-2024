@@ -1,0 +1,28 @@
+<h1>producto</h1>
+<router-outlet/>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Imagen</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of producto; track $index) {
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.category.name }}</td>
+                <td> <img [ngSrc]="item.images[0]" width="200" height="200" /> </td>
+            </tr>
+        }
+    </tbody>
+</table>
